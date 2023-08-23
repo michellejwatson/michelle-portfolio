@@ -6,3 +6,4 @@ A webpage that provides a portfolio of the projects I have worked on and my work
 Backend: sanity 
 Frontend: React 
 Animations: framer-motion
+CSS styling: node-sass
