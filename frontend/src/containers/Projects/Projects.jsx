@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Projects.scss';
 import { urlFor, client } from '../../client';
+import { AppWrap } from '../../wrapper';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -15,7 +16,7 @@ const Projects = () => {
   return (
     
     <div>
-      <h1>Projects</h1>
+      <h1 className='head-text'>Projects</h1>
       <div>
         {projects.map((project) => (
           <div key={project._id}>
@@ -38,4 +39,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default AppWrap(Projects, 'projects');

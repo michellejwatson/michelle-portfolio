@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { motion, transform } from 'framer-motion';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faReact, faDocker, faAws } from '@fortawesome/free-brands-svg-icons';
 import { images } from '../../constants';
 import './Header.scss';
+import { AppWrap } from '../../wrapper';
 
 const scaleVariants = {
   whileInView: {
@@ -17,7 +19,7 @@ const scaleVariants = {
 
 const Header = () => {
   return (
-    <div id='home' className="app__header app__flex">
+    <div className="app__header app__flex">
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
@@ -33,34 +35,29 @@ const Header = () => {
 
         <div className="tag-cmp app__flex">
           <p className="p-text">Software Engineer</p>
-          <p className="p-text">Backend</p>
+          <p className="p-text">Full Stack and Backend</p>
+        </div>
+        
+        <div className="tag-cmp app__flex">
+          <p className="p-text">University of Victoria - Bachelor of Engineering</p>
+          <p className="p-text">Software Engineering with Minor in Mechanical Systems</p>
+          <p className="p-text">September 2018 - December 2023</p>
         </div>
       </div>
     </motion.div>
 
-    <motion.div
-      whileInView={{ opacity: [0, 1] }}
-      transition={{ duration: 0.5, delayChildren: 0.5 }}
-      className="app__header-img"
-    >
+    <div className="app__header-img">
       {/*<img src={images.profile} alt="profile_bg" />*/}
-      <motion.img
-        whileInView={{ scale: [0, 1] }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        src={images.circle}
-        alt="profile_circle"
-        className="overlay_circle"
-      />
-    </motion.div>
+    </div>
 
     <motion.div
       variants={scaleVariants}
       whileInView={scaleVariants.whileInView}
       className="app__header-circles"
     >
-      {[images.react, images.graphql, images.sass].map((circle, index) => (
+      {[<FontAwesomeIcon icon={faReact} />, <FontAwesomeIcon icon={faDocker} />, <FontAwesomeIcon icon={faAws} />].map((CircleComponent, index) => (
         <div className="circle-cmp app__flex" key={`circle-${index}`}>
-          <img src={circle} alt="profile_bg" />
+          {CircleComponent}
         </div>
       ))}
     </motion.div>
@@ -68,4 +65,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default AppWrap(Header, 'home');

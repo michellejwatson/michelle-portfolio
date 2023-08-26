@@ -16,14 +16,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 62.5px;
+    height: 26.25px;
 
     img {
-        width: 90px;
-        height: 20px;
+        width: 125px;
+        height: 52.5px;
 
         @media screen and (min-width: 2000px) {
-            width: 180px;
-            height: 40 pix;
+            width: 187.5px;
+            height: 78.75px;
         }
     }
 }
@@ -56,10 +58,12 @@
             flex-direction: column;
             text-transform: uppercase;
             font-weight: 500;
+            font-size: 15px;
             transition: all 0.3s ease-in-out;
 
             &:hover {
                 color: var(--secondary-color);
+                font-weight: 500;
             }
         }
 
@@ -82,7 +86,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: var(--secondary-color);
 
     svg {
@@ -103,8 +106,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        background: url(../../assets/bgWhite.png);
-        background-color: var(--white-color);
+        background-color: var(--primary-color);
         background-size: cover;
         background-repeat: repeat;
         box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);

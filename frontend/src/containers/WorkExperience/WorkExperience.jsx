@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './WorkExperience.scss';
 import { urlFor, client } from '../../client';
+import { AppWrap } from '../../wrapper';
 
 const WorkExperience = () => {
   const [workExperiences, setWorkExperiences] = useState([]);
@@ -13,7 +14,7 @@ const WorkExperience = () => {
 
   return (
     <div>
-      <h1>Work Experience</h1>
+      <h1 className='head-text'>Work Experience</h1>
       <div>
         {workExperiences.map((work) => (
           <div key={work._id}>
@@ -39,4 +40,4 @@ const WorkExperience = () => {
   )
 }
 
-export default WorkExperience
+export default AppWrap(WorkExperience, 'work experience');
