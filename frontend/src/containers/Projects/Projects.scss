@@ -1,0 +1,99 @@
+.app__projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .app__projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0 0 0;
+  
+    .app__project {
+      background-color: var(--lightGray-color);
+      border: 1px solid var(--lightGray-color);
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      flex: calc(50% - 1rem); // take up half of row (2 per row)
+      margin: 0.5rem;
+
+      @media screen and (max-width: 760px) {
+        flex: calc(100% - 1rem);
+      }
+  
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 15px var(--secondary-color);
+      }
+  
+      &.expanded {
+        transform: scale(1.02);
+        .project-description {
+          display: block;
+        }
+      }
+  
+      h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+  
+      .extended-image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+        background-color: var(--lightGray-color);
+      }
+      
+      .extended-image {
+        max-width: 100%;
+        max-height: 100%;
+      }
+  
+      .project-description {
+        display: none;
+        margin-top: 1rem;
+      }
+  
+      .project-links {
+        margin-top: 0.5rem;
+  
+        a {
+          text-decoration: none;
+          color: var(--primary-color);
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        button {
+            padding: 0.75rem 0.75rem;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--gray-color);
+            font-weight: 500;
+            outline: none;
+            font-family: var(--font-base);
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 15px var(--secondary-color);
+            }
+        }
+      }
+    }
+  
+    @media screen and (max-width: 450px) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  

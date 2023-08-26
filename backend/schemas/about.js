@@ -22,6 +22,26 @@ export default{
             }
         },
         {
+            name: 'school',
+            title: 'School',
+            type: 'string'
+        },
+        {
+            name: 'degree',
+            title: 'Degree',
+            type: 'string'
+        },
+        {
+            name: 'degreeDescription',
+            title: 'Degree Description',
+            type: 'string'
+        },
+        {
+            name: 'degreeTime',
+            title: 'Degree Time Period',
+            type: 'string'
+        },
+        {
             name: 'email',
             title: 'Email',
             type: 'string'

@@ -6,18 +6,18 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 const SocialMedia = () => (
   <div className="app__social">
-    <div>
+    <a href="https://example.com" target="_blank" rel="noopener noreferrer">
       <FontAwesomeIcon icon={faDownload} />
-    </div>
-    <div>
+    </a>
+    <a href="https://github.com/michellejwatson" target="_blank" rel="noopener noreferrer">
       <FontAwesomeIcon icon={faGithub} />
-    </div>
-    <div>
+    </a>
+    <a href="mailto:michellejwatson1@gmail.com">
       <FaEnvelope />
-    </div>
-    <div>
+    </a>
+    <a href="https://www.linkedin.com/in/michelle-watson-8b1483205" target="_blank" rel="noopener noreferrer">
       <FontAwesomeIcon icon={faLinkedin} />
-    </div>
+    </a>
   </div>
 );
 
