@@ -37,7 +37,7 @@ const Header = () => {
 
           <div className="tag-cmp">
             <p className="p-text">University of Victoria - Bachelor of Engineering</p>
-            <p className="p-text">Software Engineering with Minor in Mechanical Systems</p>
+            <p className="p-text">Software Engineering, Mechanical Systems Minor</p>
             <p className="p-text">September 2018 - December 2023</p>
           </div>
         </div>

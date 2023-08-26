@@ -50,6 +50,10 @@
         justify-content: center;
         height: 250px;
         background-color: var(--lightGray-color);
+
+        @media screen and (max-width: 450px) {
+            height: 100px;
+        }
       }
       
       .extended-image {
