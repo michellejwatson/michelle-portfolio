@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, transform } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faAws } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faDocker, faAws, faSquareJs, faLinux, faJava } from '@fortawesome/free-brands-svg-icons';
 import { images } from '../../constants';
 import './Header.scss';
 import { AppWrap } from '../../wrapper';
@@ -44,15 +44,26 @@ const Header = () => {
       </motion.div>
 
       <div className="app__header-img">
-        {/*<img src={images.profile} alt="profile_bg" />*/}
       </div>
+
+      <motion.div
+        variants={scaleVariants}
+        whileInView={scaleVariants.whileInView}
+        className="app__header-circles"
+      >
+        {[<FontAwesomeIcon icon={faSquareJs} />, <FontAwesomeIcon icon={faLinux} />, <FontAwesomeIcon icon={faJava} />].map((CircleComponent, index) => (
+          <div className={`circle-cmp app__flex ${index === 1 ? 'more-left' : ''}`} key={`circle-${index}`}>
+            {CircleComponent}
+          </div>
+        ))}
+      </motion.div>
 
       <motion.div
         variants={scaleVariants}
         whileInView={scaleVariants.whileInView}
         className="app__header-circle"
       >
-        ill add my image here
+        <img src={images.profile} alt="profile_bg" />
       </motion.div>
 
       <motion.div
@@ -60,8 +71,8 @@ const Header = () => {
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
-        {[<FontAwesomeIcon icon={faReact} />, <FontAwesomeIcon icon={faDocker} />, <FontAwesomeIcon icon={faAws} />].map((CircleComponent, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
+        {[<FontAwesomeIcon icon={faDocker} />, <FontAwesomeIcon icon={faReact} />, <FontAwesomeIcon icon={faAws} />].map((CircleComponent, index) => (
+          <div className={`circle-cmp app__flex ${index === 1 ? 'more-right' : ''}`} key={`circle-${index}`}>
             {CircleComponent}
           </div>
         ))}

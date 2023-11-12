@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { AppWrap } from '../../wrapper';
 import { client } from '../../client';
 import { FaEnvelope, FaMobile } from 'react-icons/fa';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Import the CSS for styling
 import './Contact.scss';
 
 const Contact = () => {
@@ -20,17 +18,18 @@ const Contact = () => {
   const handleSubmit = () => {
     setLoading(true);
 
-    const contact = {
-      _type: 'contact',
+    const contactMe = {
+      _type: 'contactMe',
       name: name,
       email: email,
       message: message,
     }
 
-    client.create(contact)
+    client.create(contactMe)
       .then(() => {
         setLoading(false);
         setIsFormSubmitted(true);
+        setForm({ name: '', email: '', message: '' }); // Reset the form fields
       })
   }
  
@@ -49,24 +48,31 @@ const Contact = () => {
       </div>
 
       {isFormSubmitted && 
-        toast.success('Success message!', {
-          position: 'top-right', // Position of the notification
-          autoClose: 3000, // Auto close after 3 seconds
-        })
+        <div className='app__contact-cards'>
+          <div className='app__contact-card'>
+            <h2>
+              Thank you for reaching out!<br />
+              Your message has been sent.
+            </h2>
+          </div>
+        </div>
       }
 
-      <div className='app__contact-form app__flex'>
-        <div className='app__flex'>
-          <input className='p-text' type='text' placeholder='Enter your name here.' name='name' value={name} onChange={handleChangeInput} />
+      {!isFormSubmitted &&
+        <div className='app__contact-form app__flex'>
+          <div className='app__flex'>
+            <input className='p-text' type='text' placeholder='Enter your name here.' name='name' value={name} onChange={handleChangeInput} />
+          </div>
+          <div className='app__flex'>
+            <input className='p-text' type='email' placeholder='Enter your email here.' name='email' value={email} onChange={handleChangeInput} />
+          </div>
+          <div className='app__flex'>
+            <textarea className='p-text' placeholder='Enter your message here.' name='message' value={message} onChange={handleChangeInput} />
+          </div>
+          <button type='button' className='p-text' onClick={handleSubmit}>{loading ? 'Sending': 'Send Message'}</button>
         </div>
-        <div className='app__flex'>
-          <input className='p-text' type='email' placeholder='Enter your email here.' name='email' value={email} onChange={handleChangeInput} />
-        </div>
-        <div className='app__flex'>
-          <textarea className='p-text' placeholder='Enter your message here.' name='message' value={message} onChange={handleChangeInput} />
-        </div>
-        <button type='button' className='p-text' onClick={handleSubmit}>{loading ? 'Sending': 'Send Message'}</button>
-      </div>
+      }
+      
     </>
   )
 }

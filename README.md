@@ -7,3 +7,4 @@ Backend: sanity
 Frontend: React 
 Animations: framer-motion
 CSS styling: node-sass
+Deployment: Netlify (site: https://mich-wats-portfolio.netlify.app/#home)
