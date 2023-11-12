@@ -6,7 +6,11 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 const SocialMedia = () => (
   <div className="app__social">
-    <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+    <a
+      href="/frontend-react/src/components/MichelleWatsonResume.pdf"
+      download="MichelleWatsonResume.pdf"
+      title="MichelleWatsonResume.pdf"
+    >
       <FontAwesomeIcon icon={faDownload} />
     </a>
     <a href="https://github.com/michellejwatson" target="_blank" rel="noopener noreferrer">
