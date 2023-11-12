@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, transform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './Projects.scss';
 import { urlFor, client } from '../../client';
 import { AppWrap } from '../../wrapper';
@@ -38,7 +38,7 @@ const Projects = () => {
             >
               <h2>{project.title}</h2>
               <div class='app__flex extended-image-container'>
-                <img src={urlFor(project.imgUrl)} alt="Extended Image" class="extended-image" />
+                <img src={urlFor(project.imgUrl)} alt="" class="extended-image" />
               </div>
               {expandedProjectId === project._id && (
                 <div className='project-description'>

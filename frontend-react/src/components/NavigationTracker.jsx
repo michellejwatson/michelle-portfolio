@@ -44,7 +44,9 @@ const NavigationTracker = () => {
           key={item}
           className="app__navigation-track"
           style={active === item ? { backgroundColor: '#47294c' } : {}}
-        />
+        >
+          
+        </a>
       ))}
     </div>
   );

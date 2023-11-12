@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, transform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faDocker, faAws, faSquareJs, faLinux, faJava } from '@fortawesome/free-brands-svg-icons';
 import { images } from '../../constants';

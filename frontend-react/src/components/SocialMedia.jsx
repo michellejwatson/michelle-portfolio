@@ -9,9 +9,9 @@ const SocialMedia = () => (
   <div className="app__social">
     <a
       href={MichelleWatsonResume}
-      download="MichelleWatsonResume"
       target="_blank"
       rel="noreferrer"
+      title="Download Michelle Watson's Resume"
     >
       <FontAwesomeIcon icon={faDownload} />
     </a>
