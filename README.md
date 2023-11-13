@@ -2,11 +2,11 @@
 A webpage that provides a portfolio of the projects I have worked on, my work experience, and a contact me form.
 
 ## Tools Used 
-Backend: sanity.io 
-Frontend: React 
-Animations: framer-motion
-CSS styling: node-sass
-Continuous Integration / Deployment: Netlify. Deployed site can be found at: https://mich-wats-portfolio.netlify.app/#home
+- Backend: sanity.io 
+- Frontend: React 
+- Animations: framer-motion
+- CSS styling: node-sass
+- Deployment: Netlify. Deployed site can be found at: https://mich-wats-portfolio.netlify.app/#home
 
 ## Local Deploy 
 - In the backend folder, run `sanity build` then `sanity start`
