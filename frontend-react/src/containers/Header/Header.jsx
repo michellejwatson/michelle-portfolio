@@ -32,7 +32,7 @@ const Header = () => {
 
           <div className="tag-cmp">
             <p className="p-text">Software Engineer</p>
-            <p className="p-text">Interested in Full Stack and Backend Development</p>
+            <p className="p-text">Full Stack and Backend Development</p>
           </div>
 
           <div className="tag-cmp">
