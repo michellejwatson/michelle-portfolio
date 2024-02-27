@@ -219,6 +219,18 @@
         flex-wrap: wrap;
         margin-left: 0;
 
+        .more-left {
+            position: relative;
+            top: -50px;
+            left: 0px;
+        }
+          
+        .more-right {
+            position: relative;
+            top: 50px;
+            left: 0px;
+        }
+
         div {
             margin: 1rem;
         }
