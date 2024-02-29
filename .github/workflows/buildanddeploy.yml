@@ -20,9 +20,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: frontend-react
 
       - name: Build React app
         run: npm run build
+        working-directory: frontend-react
 
   deploy:
     needs: build
@@ -34,6 +36,7 @@ jobs:
         with:
           command: deploy
           args: --prod
+          dir: frontend-react/build
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: mich-wats-portfolio.netlify.app
