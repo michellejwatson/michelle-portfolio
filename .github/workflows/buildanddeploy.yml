@@ -39,6 +39,6 @@ jobs:
         id: netlify_deploy
           run: |
             netlify deploy \
-              --dir frontend-react/build \
-              --site mich-wats-portfolio.netlify.app
-              --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
+            --dir frontend-react/build \
+            --site mich-wats-portfolio.netlify.app \
+            --auth ${{ secrets.NETLIFY_AUTH_TOKEN }}
